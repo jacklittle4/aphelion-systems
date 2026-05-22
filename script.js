@@ -5,6 +5,8 @@ const contactForm = document.querySelector(".contact-form");
 const formStatus = document.querySelector(".form-status");
 const themeToggle = document.querySelector("[data-theme-toggle]");
 const themeLabel = document.querySelector("[data-theme-label]");
+const demoTabs = document.querySelectorAll("[data-demo-target]");
+const demoPanels = document.querySelectorAll("[data-demo-panel]");
 const themeQuery = window.matchMedia("(prefers-color-scheme: dark)");
 const themeStorageKey = "aphelion-theme";
 
@@ -95,3 +97,17 @@ if (contactForm && formStatus) {
     formStatus.textContent = "Opening your email app with the project note.";
   });
 }
+
+demoTabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    const target = tab.dataset.demoTarget;
+
+    demoTabs.forEach((item) => {
+      item.classList.toggle("is-active", item === tab);
+    });
+
+    demoPanels.forEach((panel) => {
+      panel.classList.toggle("is-active", panel.dataset.demoPanel === target);
+    });
+  });
+});
