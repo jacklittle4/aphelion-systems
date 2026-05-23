@@ -7,6 +7,8 @@ A static business website for a web, app, and digital systems studio. It is buil
 - `index.html` - concise homepage
 - `services.html` - service and systems details
 - `pricing.html` - suggested starting prices
+- `about.html` - studio positioning and human presence
+- `faq.html` - common client questions
 - `process.html` - project process and standards
 - `contact.html` - project inquiry form
 - `styles.css` - responsive visual design

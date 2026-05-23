@@ -234,7 +234,7 @@ textarea {
 
 .hero {
   position: relative;
-  min-height: 78svh;
+  min-height: 0;
   overflow: hidden;
   border-bottom: 1px solid var(--line);
   color: var(--hero-ink);
@@ -294,9 +294,9 @@ textarea {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.5fr);
   gap: clamp(34px, 6vw, 88px);
-  min-height: 78svh;
+  min-height: 0;
   align-items: center;
-  padding-block: clamp(70px, 9vw, 120px) clamp(58px, 8vw, 96px);
+  padding-block: clamp(34px, 5vw, 58px);
 }
 
 .hero-copy {
@@ -337,9 +337,9 @@ p {
 
 h1 {
   max-width: 980px;
-  margin-bottom: 24px;
-  font-size: clamp(3.5rem, 8vw, 7.2rem);
-  line-height: 0.9;
+  margin-bottom: 18px;
+  font-size: clamp(2.55rem, 5.4vw, 4.7rem);
+  line-height: 0.97;
   letter-spacing: 0;
 }
 
@@ -359,9 +359,9 @@ h3 {
 
 .hero-text {
   max-width: 700px;
-  margin-bottom: 34px;
+  margin-bottom: 24px;
   color: var(--hero-muted);
-  font-size: clamp(1.08rem, 2vw, 1.32rem);
+  font-size: clamp(1rem, 1.8vw, 1.22rem);
 }
 
 .hero-actions {
@@ -415,8 +415,8 @@ h3 {
   align-self: end;
   display: grid;
   gap: 12px;
-  max-width: 410px;
-  padding: 22px;
+  max-width: 390px;
+  padding: 18px;
   border-color: rgba(237, 247, 245, 0.18);
   background: rgba(13, 19, 21, 0.62);
   backdrop-filter: blur(18px);
@@ -427,7 +427,7 @@ h3 {
   grid-template-columns: 44px 1fr;
   align-items: center;
   gap: 14px;
-  padding-block: 14px;
+  padding-block: 11px;
   border-top: 1px solid rgba(237, 247, 245, 0.12);
 }
 
@@ -468,6 +468,7 @@ h3 {
 }
 
 .section,
+.proof-section,
 .systems-section,
 .process-section,
 .principles-section,
@@ -475,7 +476,9 @@ h3 {
 .note-section,
 .cta-section,
 .showcase-section,
-.demo-section {
+.demo-section,
+.about-section,
+.faq-section {
   padding-block: clamp(88px, 12vw, 156px);
 }
 
@@ -491,7 +494,8 @@ h3 {
 .systems-section,
 .contact-section,
 .note-section,
-.showcase-section {
+.showcase-section,
+.proof-section {
   background: var(--night-2);
 }
 
@@ -518,15 +522,18 @@ h3 {
 .feature-grid,
 .service-grid,
 .system-grid,
+.project-grid,
 .mini-pricing,
 .pricing-grid,
-.principles-grid {
+.principles-grid,
+.faq-list {
   display: grid;
   gap: 18px;
 }
 
 .feature-grid,
-.mini-pricing {
+.mini-pricing,
+.project-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
@@ -545,9 +552,11 @@ h3 {
 .feature-card,
 .service-card,
 .system-card,
+.project-card,
 .pricing-card,
 .mini-pricing article,
-.principles-grid article {
+.principles-grid article,
+.faq-item {
   padding: clamp(24px, 3vw, 34px);
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -556,12 +565,14 @@ h3 {
 
 .feature-card,
 .service-card,
-.system-card {
+.system-card,
+.project-card {
   min-height: 270px;
 }
 
 .feature-card,
-.system-card {
+.system-card,
+.project-card {
   display: grid;
   align-content: space-between;
   gap: 42px;
@@ -570,14 +581,27 @@ h3 {
 .feature-card p,
 .service-card p,
 .system-card p,
+.project-card p,
 .pricing-card p,
 .pricing-card li,
 .mini-pricing p,
 .principles-grid p,
 .timeline p,
 .demo-copy p,
-.console-line strong {
+.console-line strong,
+.faq-item p,
+.about-copy p,
+.comparison-table span,
+.contact-brief li {
   color: var(--muted);
+}
+
+.project-card span {
+  color: var(--accent);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .service-card {
@@ -593,11 +617,74 @@ h3 {
 }
 
 .showcase-layout,
-.demo-layout {
+.demo-layout,
+.about-layout {
   display: grid;
   grid-template-columns: minmax(0, 0.82fr) minmax(340px, 0.68fr);
   gap: clamp(36px, 7vw, 96px);
   align-items: center;
+}
+
+.guide-layout {
+  align-items: start;
+}
+
+.comparison-table {
+  display: grid;
+  gap: 0;
+  padding: clamp(18px, 3vw, 24px);
+}
+
+.comparison-table div {
+  display: grid;
+  grid-template-columns: 1.35fr 0.9fr 0.8fr;
+  gap: 18px;
+  padding-block: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.comparison-table div:first-child {
+  border-top: 0;
+}
+
+.comparison-table div:first-child span {
+  color: var(--primary);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.about-copy {
+  display: grid;
+  gap: 18px;
+}
+
+.about-copy p {
+  margin-bottom: 0;
+}
+
+.faq-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.faq-item h2 {
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+}
+
+.contact-brief h2 {
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+}
+
+.contact-brief ul {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.email-button {
+  margin-top: 18px;
 }
 
 .system-console,
@@ -843,21 +930,43 @@ h3 {
 }
 
 .site-footer {
-  display: flex;
-  justify-content: space-between;
-  gap: 18px;
-  padding-block: 30px;
+  padding-block: clamp(42px, 6vw, 72px) 24px;
   color: var(--soft);
   border-top: 1px solid var(--line);
 }
 
-.site-footer p {
-  margin-bottom: 0;
+.footer-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(160px, 0.45fr) minmax(150px, 0.4fr);
+  gap: clamp(28px, 6vw, 78px);
 }
 
-.site-footer a {
+.footer-layout > div,
+.footer-layout nav {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+}
+
+.footer-layout p,
+.footer-bottom span {
+  margin-bottom: 0;
+  color: var(--soft);
+}
+
+.site-footer a,
+.footer-layout p:first-child {
   color: var(--ink);
   font-weight: 800;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 42px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -894,6 +1003,7 @@ h3 {
   .section-heading,
   .showcase-layout,
   .demo-layout,
+  .about-layout,
   .contact-layout,
   .principles-layout,
   .note-panel,
@@ -907,6 +1017,8 @@ h3 {
 
   .feature-grid,
   .mini-pricing,
+  .project-grid,
+  .faq-list,
   .timeline {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -959,20 +1071,19 @@ h3 {
   }
 
   .hero {
-    min-height: 78svh;
+    min-height: 0;
   }
 
   .hero-content {
-    min-height: 78svh;
-    padding-block: 54px 46px;
+    min-height: 0;
+    padding-block: 34px;
   }
 
   h1 {
-    font-size: clamp(3rem, 14vw, 4.9rem);
+    font-size: clamp(2.25rem, 10.5vw, 3.5rem);
   }
 
   .hero-actions,
-  .site-footer,
   .demo-controls {
     flex-direction: column;
     align-items: stretch;
@@ -986,11 +1097,27 @@ h3 {
   .feature-grid,
   .service-grid,
   .system-grid,
+  .project-grid,
   .mini-pricing,
   .pricing-grid,
   .principles-grid,
+  .faq-list,
   .timeline {
     grid-template-columns: 1fr;
+  }
+
+  .comparison-table div {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .footer-layout,
+  .footer-bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    display: grid;
   }
 
   .timeline li,
@@ -1025,9 +1152,11 @@ h3 {
   .feature-card,
   .service-card,
   .system-card,
+  .project-card,
   .pricing-card,
   .mini-pricing article,
   .principles-grid article,
+  .faq-item,
   .contact-form,
   .system-console,
   .demo-panel {

@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=4" />
+    <link rel="stylesheet" href="styles.css?v=6" />
   </head>
   <body>
     <header class="site-header" data-header>
@@ -27,7 +27,8 @@
           <a href="index.html">Home</a>
           <a href="services.html" aria-current="page">Services</a>
           <a href="pricing.html">Pricing</a>
-          <a href="process.html">Process</a>
+          <a href="about.html">About</a>
+          <a href="faq.html">FAQ</a>
           <a href="contact.html">Contact</a>
         </nav>
         <button class="theme-toggle" type="button" data-theme-toggle>
@@ -100,45 +101,42 @@
       </section>
 
       <section class="demo-section" aria-labelledby="demo-title">
-        <div class="demo-layout page-grid">
+        <div class="demo-layout guide-layout page-grid">
           <div>
-            <p class="section-kicker">Interactive snapshot</p>
-            <h2 id="demo-title">Different project types need different engineering weight.</h2>
+            <p class="section-kicker">Tier guide</p>
+            <h2 id="demo-title">Which level is right for me?</h2>
             <p>
-              A basic site should stay lean. A software project needs deeper planning,
-              architecture, and testing.
+              The simplest project that solves the problem is usually the right one.
+              This comparison keeps starter sites affordable while reserving heavier
+              pricing for real software.
             </p>
-            <div class="demo-controls" role="tablist" aria-label="Project type examples">
-              <button class="demo-tab is-active" type="button" data-demo-target="site">Site</button>
-              <button class="demo-tab" type="button" data-demo-target="app">App</button>
-              <button class="demo-tab" type="button" data-demo-target="automation">Automation</button>
-            </div>
           </div>
-          <div class="demo-panel elevated-card">
-            <article class="demo-copy is-active" data-demo-panel="site">
-              <span>Lean presence</span>
-              <h3>Static pages, premium polish, fast deployment.</h3>
-              <p>
-                Best for portfolios, simple local businesses, personal brands, or
-                services that need credibility without custom backend logic.
-              </p>
-            </article>
-            <article class="demo-copy" data-demo-panel="app">
-              <span>Custom product</span>
-              <h3>Interface, data, roles, and business behavior.</h3>
-              <p>
-                Best for portals, dashboards, quote tools, internal systems, or
-                customer-facing software where templates cannot model the workflow.
-              </p>
-            </article>
-            <article class="demo-copy" data-demo-panel="automation">
-              <span>Connected workflow</span>
-              <h3>Less manual transfer between tools.</h3>
-              <p>
-                Best for routing leads, syncing records, sending notifications,
-                tracking requests, or turning form submissions into real operations.
-              </p>
-            </article>
+          <div class="comparison-table elevated-card" role="table" aria-label="Project tier comparison">
+            <div role="row">
+              <span role="columnheader">Need</span>
+              <span role="columnheader">Best fit</span>
+              <span role="columnheader">Typical timeline</span>
+            </div>
+            <div role="row">
+              <span>Portfolio or simple business page</span>
+              <span>Starter Presence</span>
+              <span>5-7 days</span>
+            </div>
+            <div role="row">
+              <span>Multi-page brand site with forms</span>
+              <span>Business Website</span>
+              <span>1-2 weeks</span>
+            </div>
+            <div role="row">
+              <span>Clickable product or dashboard concept</span>
+              <span>Interface Prototype</span>
+              <span>2-3 weeks</span>
+            </div>
+            <div role="row">
+              <span>App, portal, backend, or automation</span>
+              <span>Custom System</span>
+              <span>3-6+ weeks</span>
+            </div>
           </div>
         </div>
       </section>
@@ -175,11 +173,35 @@
       </section>
     </main>
 
-    <footer class="site-footer page-grid">
-      <p>Aphelion Systems</p>
-      <p><a href="contact.html">Start a project</a></p>
+    <footer class="site-footer">
+      <div class="footer-layout page-grid">
+        <div>
+          <a class="brand" href="index.html" aria-label="Aphelion Systems home">
+            <span class="brand-mark">A</span>
+            <span>Aphelion Systems</span>
+          </a>
+          <p>Lean premium websites, custom software, and automation systems.</p>
+          <a href="mailto:hello@aphelionsystems.dev">hello@aphelionsystems.dev</a>
+        </div>
+        <nav aria-label="Footer navigation">
+          <a href="services.html">Services</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="about.html">About</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div>
+          <p>Social</p>
+          <a href="https://github.com/jacklittle4">GitHub</a>
+          <a href="https://www.linkedin.com/">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer-bottom page-grid">
+        <span>&copy; 2026 Aphelion Systems.</span>
+        <span>Built for GitHub Pages.</span>
+      </div>
     </footer>
 
-    <script src="script.js?v=4"></script>
+    <script src="script.js?v=6"></script>
   </body>
 </html>

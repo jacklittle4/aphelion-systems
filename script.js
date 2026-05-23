@@ -94,7 +94,7 @@ navLinks.forEach((link) => {
 
 if (contactForm && formStatus) {
   contactForm.addEventListener("submit", () => {
-    formStatus.textContent = "Opening your email app with the project note.";
+    formStatus.textContent = "Sending your project note...";
   });
 }
 
