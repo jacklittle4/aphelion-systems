@@ -5,8 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Contact Aphelion Systems about a website, app, automation, or digital systems project."
+      content="Request a quote from Aphelion Systems for a small-business website, quote form, booking flow, dashboard, automation, or custom web app."
     />
+    <meta property="og:title" content="Request a Quote | Aphelion Systems" />
+    <meta property="og:description" content="Tell Aphelion Systems about your business, current website, budget, timeline, and desired digital system." />
+    <meta property="og:image" content="https://jacklittle4.github.io/aphelion-systems/assets/hero-workspace.png" />
+    <meta property="og:url" content="https://jacklittle4.github.io/aphelion-systems/contact.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://jacklittle4.github.io/aphelion-systems/contact.html" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <title>Contact | Aphelion Systems</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,7 +21,7 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=7" />
+    <link rel="stylesheet" href="styles.css?v=8" />
   </head>
   <body>
     <header class="site-header" data-header>
@@ -53,20 +60,35 @@
               Include who it is for, what should happen after someone visits or logs in,
               your timeline, and the budget range that feels realistic.
             </p>
-            <a class="button button-primary email-button" href="mailto:hello@aphelionsystems.dev?subject=Project%20inquiry%20for%20Aphelion%20Systems">Email Aphelion</a>
-            <a class="text-link" href="mailto:hello@aphelionsystems.dev">hello@aphelionsystems.dev</a>
+            <a class="button button-primary email-button" href="mailto:aphelionsystems@gmail.com?subject=Project%20inquiry%20for%20Aphelion%20Systems">Email Aphelion</a>
+            <a class="text-link" href="mailto:aphelionsystems@gmail.com">aphelionsystems@gmail.com</a>
           </div>
-          <form class="contact-form" action="https://formsubmit.co/hello@aphelionsystems.dev" method="POST">
+          <form class="contact-form" action="https://formsubmit.co/aphelionsystems@gmail.com" method="POST">
             <input type="hidden" name="_subject" value="New Aphelion Systems project inquiry" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="https://jacklittle4.github.io/aphelion-systems/thank-you.html" />
             <label>
               Name
               <input type="text" name="name" autocomplete="name" required />
             </label>
             <label>
+              Business or project name
+              <input type="text" name="business_name" autocomplete="organization" />
+            </label>
+            <label>
               Email
               <input type="email" name="email" autocomplete="email" required />
+            </label>
+            <label>
+              Preferred contact method
+              <select name="preferred_contact" required>
+                <option value="">Select one</option>
+                <option>Email</option>
+                <option>Phone call</option>
+                <option>Text</option>
+                <option>Video call</option>
+              </select>
             </label>
             <label>
               Project type
@@ -76,7 +98,7 @@
                 <option>Business Website</option>
                 <option>Interactive Site</option>
                 <option>Custom System</option>
-                <option>Scientific or data visualization</option>
+                <option>Quote form, booking flow, or automation</option>
                 <option>Not sure yet</option>
               </select>
             </label>
@@ -90,6 +112,24 @@
                 <option>$2,000+</option>
                 <option>Not sure yet</option>
               </select>
+            </label>
+            <label>
+              Timeline
+              <select name="timeline" required>
+                <option value="">Select one</option>
+                <option>ASAP</option>
+                <option>1-2 weeks</option>
+                <option>3-6 weeks</option>
+                <option>Flexible</option>
+              </select>
+            </label>
+            <label>
+              Current website
+              <input type="url" name="current_website" placeholder="https://example.com" />
+            </label>
+            <label>
+              Desired goal
+              <textarea name="desired_goal" rows="4" placeholder="More leads, online payment, quote form, booking, dashboard, better mobile site, etc." required></textarea>
             </label>
             <label>
               What are you hoping to build?
@@ -112,7 +152,7 @@
             <span>Aphelion Systems</span>
           </a>
           <p>Lean premium websites, custom software, and automation systems.</p>
-          <a href="mailto:hello@aphelionsystems.dev">hello@aphelionsystems.dev</a>
+          <a href="mailto:aphelionsystems@gmail.com">aphelionsystems@gmail.com</a>
         </div>
         <nav aria-label="Footer navigation">
           <a href="services.html">Services</a>
@@ -120,6 +160,8 @@
           <a href="about.html">About</a>
           <a href="faq.html">FAQ</a>
           <a href="contact.html">Contact</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
         </nav>
         <div>
           <p>Social</p>
@@ -133,6 +175,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=7"></script>
+    <script src="script.js?v=8"></script>
   </body>
 </html>

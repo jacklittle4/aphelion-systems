@@ -542,6 +542,9 @@ h3 {
 .project-grid,
 .mini-pricing,
 .pricing-grid,
+.audience-grid,
+.problem-grid,
+.care-grid,
 .principles-grid,
 .faq-list {
   display: grid;
@@ -566,11 +569,22 @@ h3 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.audience-grid,
+.problem-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.care-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .feature-card,
 .service-card,
 .system-card,
 .project-card,
 .pricing-card,
+.audience-grid article,
+.problem-grid article,
 .mini-pricing article,
 .principles-grid article,
 .faq-item {
@@ -587,6 +601,18 @@ h3 {
   min-height: 270px;
 }
 
+.audience-grid article {
+  min-height: 94px;
+  display: grid;
+  align-items: center;
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.problem-grid article {
+  min-height: 210px;
+}
+
 .feature-card,
 .system-card,
 .project-card {
@@ -599,6 +625,7 @@ h3 {
 .service-card p,
 .system-card p,
 .project-card p,
+.problem-grid p,
 .pricing-card p,
 .pricing-card li,
 .mini-pricing p,
@@ -628,6 +655,18 @@ h3 {
 
 .case-card .text-link {
   margin-top: 0;
+}
+
+.case-study-card {
+  gap: 12px;
+}
+
+.case-study-card p {
+  margin-bottom: 0;
+}
+
+.case-study-card strong {
+  color: var(--ink);
 }
 
 .service-card {
@@ -1063,6 +1102,9 @@ h3 {
 @media (max-width: 1180px) {
   .service-grid,
   .system-grid,
+  .audience-grid,
+  .problem-grid,
+  .care-grid,
   .pricing-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1169,6 +1211,9 @@ h3 {
   .service-grid,
   .system-grid,
   .project-grid,
+  .audience-grid,
+  .problem-grid,
+  .care-grid,
   .mini-pricing,
   .pricing-grid,
   .principles-grid,
