@@ -1,0 +1,3 @@
+# Local client drafts and owner-only tools should not be published with Aphelion.
+owner-updater/
+epic-little-treasures/
