@@ -1,175 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="The Aphelion Systems process for planning, designing, building, revising, launching, and supporting small-business websites and digital systems."
-    />
-    <meta property="og:title" content="Process | Aphelion Systems" />
-    <meta property="og:description" content="A clear process for consultation, mockup, development, revisions, launch checklist, and support." />
-    <meta property="og:image" content="https://jacklittle4.github.io/aphelion-systems/assets/hero-workspace.png" />
-    <meta property="og:url" content="https://jacklittle4.github.io/aphelion-systems/process.html" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="canonical" href="https://jacklittle4.github.io/aphelion-systems/process.html" />
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <title>Process | Aphelion Systems</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css?v=8" />
-  </head>
-  <body>
-    <header class="site-header" data-header>
-      <a class="brand" href="index.html" aria-label="Aphelion Systems home">
-        <span class="brand-mark">A</span>
-        <span>Aphelion Systems</span>
-      </a>
-      <div class="header-actions">
-        <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
-          <a href="index.html">Home</a>
-          <a href="services.html">Services</a>
-          <a href="pricing.html">Pricing</a>
-          <a href="about.html">About</a>
-          <a href="faq.html">FAQ</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-        <button class="theme-toggle" type="button" data-theme-toggle>
-          <span data-theme-label>System</span>
-        </button>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span class="sr-only">Menu</span>
-        </button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A simple five-step process: consultation, mockup, development, revision, and launch." />
+  <meta property="og:title" content="Process | Aphelion Systems" />
+  <meta property="og:description" content="A simple five-step process: consultation, mockup, development, revision, and launch." />
+  <meta property="og:image" content="https://jacklittle4.github.io/aphelion-systems/assets/work-storefront.png" />
+  <meta property="og:url" content="https://jacklittle4.github.io/aphelion-systems/process.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://jacklittle4.github.io/aphelion-systems/process.html" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <title>Process | Aphelion Systems</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=9" />
+</head>
+<body>
+  <canvas id="space" aria-hidden="true"></canvas>
+  <header class="nav" data-header>
+    <div class="shell">
+      <a class="brand" href="index.html" aria-label="Aphelion Systems home"><svg class="mark" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="17" cy="17" r="6.5" fill="#F5B14C"/><ellipse cx="17" cy="17" rx="15" ry="6.5" stroke="#838DFF" stroke-width="2" transform="rotate(-28 17 17)"/></svg> Aphelion Systems</a>
+      <nav class="nav-links" id="site-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-cta"><a href="contact.html" class="btn btn-amber">Start a project</a><button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button></div>
+    </div>
+  </header>
+<header class="page-hero"><div class="shell"><span class="eyebrow on-dark">Process</span><h1>A simple process that reduces guesswork.</h1><p>Five clear steps that turn an idea into working software without letting the project become vague or hard to finish.</p></div></header>
+<main>
+  <section class="section dark">
+    <div class="shell">
+      <div class="section-head" data-reveal><span class="eyebrow">Method</span><h2 class="section-title">From idea to launch.</h2><p class="section-sub">Each phase produces something concrete: a direction, a prototype, a build, a refined product, and a handoff.</p></div>
+      <ol class="timeline stack">
+        <li data-reveal><span>01</span><h3>Consultation</h3><p>We clarify goals, audience, key actions, content needs, and launch constraints so the scope stays practical from day one.</p></li>
+        <li data-reveal data-delay="1"><span>02</span><h3>Mockup</h3><p>I shape the page structure and visual direction, then share a prototype so you can react to something real before any code is written.</p></li>
+        <li data-reveal data-delay="2"><span>03</span><h3>Development</h3><p>I build the working product: responsive pages, app behavior, forms, integrations, and the content that ties it together.</p></li>
+        <li data-reveal><span>04</span><h3>Revision</h3><p>We review the things people actually notice mobile layouts, loading speed, accessibility basics, and form behavior and refine until it holds up.</p></li>
+        <li data-reveal data-delay="1"><span>05</span><h3>Launch</h3><p>I deploy, connect analytics, document the system, and plan the first round of improvements so the handoff is clean.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="shell">
+      <div class="section-head" data-reveal><span class="eyebrow">Standards</span><h2 class="section-title">A few things every build should respect.</h2><p class="section-sub">Whatever the project, these hold true across the work.</p></div>
+      <div class="grid-3">
+        <article class="card" data-reveal><h3>Responsive and accessible</h3><p>Layouts adapt cleanly across screens, pages load quickly, and accessibility basics are handled rather than bolted on.</p></article>
+        <article class="card" data-reveal data-delay="1"><h3>Documented handoff</h3><p>Content patterns and handoff notes leave room for growth, so the site stays editable long after launch.</p></article>
+        <article class="card" data-reveal data-delay="2"><h3>Launch checklist</h3><p>Before going live I work through speed, analytics, forms, and final QA so nothing important is left to chance.</p></article>
       </div>
-    </header>
+    </div>
+  </section>
 
-    <main>
-      <section class="page-hero page-grid">
-        <p class="section-kicker">Process</p>
-        <h1>A build path that keeps decisions visible.</h1>
-        <p>
-          The process is designed to turn uncertainty into working software without
-          letting the project become vague, bloated, or hard to finish.
-        </p>
-      </section>
-
-      <section class="process-section compact-top" aria-labelledby="process-title">
-        <div class="section-heading page-grid">
-          <div>
-            <p class="section-kicker">Method</p>
-            <h2 id="process-title">From idea to launch.</h2>
-          </div>
-          <p>
-            Each phase produces something concrete: a direction, a prototype, a build,
-            a refined product, and a handoff.
-          </p>
-        </div>
-        <ol class="timeline page-grid">
-          <li>
-            <span>Align</span>
-            <h3>Map the offer and audience.</h3>
-            <p>Clarify goals, users, actions, tools, content needs, and launch constraints.</p>
-          </li>
-          <li>
-            <span>Design</span>
-            <h3>Shape the interface.</h3>
-            <p>Create the page structure, visual direction, and prototype for feedback.</p>
-          </li>
-          <li>
-            <span>Build</span>
-            <h3>Develop the working product.</h3>
-            <p>Implement responsive pages, app behavior, forms, integrations, and content.</p>
-          </li>
-          <li>
-            <span>Refine</span>
-            <h3>Test what people will notice.</h3>
-            <p>Review mobile layouts, loading speed, accessibility basics, and form behavior.</p>
-          </li>
-          <li>
-            <span>Launch</span>
-            <h3>Ship and support the handoff.</h3>
-            <p>Deploy, connect analytics, document the system, and plan the first improvements.</p>
-          </li>
-        </ol>
-      </section>
-
-      <section class="principles-section" aria-labelledby="principles-title">
-        <div class="principles-layout page-grid">
-          <div>
-            <p class="section-kicker">Standards</p>
-            <h2 id="principles-title">A few things every build should respect.</h2>
-          </div>
-          <div class="principles-grid">
-            <article>
-              <h3>Clear before clever</h3>
-              <p>The design should make the offer easier to understand first.</p>
-            </article>
-            <article>
-              <h3>Fast enough to feel effortless</h3>
-              <p>Pages should load quickly and avoid effects that get in the way.</p>
-            </article>
-            <article>
-              <h3>Editable after launch</h3>
-              <p>Content patterns and handoff notes should leave room for growth.</p>
-            </article>
-            <article>
-              <h3>Built around real workflows</h3>
-              <p>Apps and automations should match the way the team already works.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="cta-section" aria-labelledby="process-cta-title">
-        <div class="cta-panel page-grid">
-          <div>
-            <p class="section-kicker">Launch path</p>
-            <h2 id="process-cta-title">A clear process starts with a clear goal.</h2>
-          </div>
-          <p>Share what the site or system should make easier, then scope can stay practical.</p>
-          <a class="button button-primary" href="contact.html">Start a project</a>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="footer-layout page-grid">
-        <div>
-          <a class="brand" href="index.html" aria-label="Aphelion Systems home">
-            <span class="brand-mark">A</span>
-            <span>Aphelion Systems</span>
-          </a>
-          <p>Lean premium websites, custom software, and automation systems.</p>
-          <a href="mailto:aphelionsystems@gmail.com">aphelionsystems@gmail.com</a>
-        </div>
-        <nav aria-label="Footer navigation">
-          <a href="services.html">Services</a>
-          <a href="pricing.html">Pricing</a>
-          <a href="about.html">About</a>
-          <a href="faq.html">FAQ</a>
-          <a href="contact.html">Contact</a>
-          <a href="privacy.html">Privacy</a>
-          <a href="terms.html">Terms</a>
-        </nav>
-        <div>
-          <p>Social</p>
-          <a href="https://github.com/jacklittle4">GitHub</a>
-          <a href="https://www.linkedin.com/">LinkedIn</a>
-        </div>
+  <section class="section dark tight">
+    <div class="shell">
+      <div class="cta-panel" data-reveal><span class="eyebrow">Next step</span><h2>A clear process starts with a clear goal.</h2><p>Share what the site or system should make easier, and we can keep the scope practical from the first conversation.</p><a class="btn btn-amber" href="contact.html">Send a project note</a></div>
+    </div>
+  </section>
+</main>
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-grid">
+        <div><div class="brand"><svg class="mark" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="17" cy="17" r="6.5" fill="#F5B14C"/><ellipse cx="17" cy="17" rx="15" ry="6.5" stroke="#838DFF" stroke-width="2" transform="rotate(-28 17 17)"/></svg> Aphelion Systems</div>
+          <p class="tagline">Affordable, full-stack websites, custom software, and automation systems. Built by Jack Little.</p>
+          <a class="email" href="mailto:aphelionsystems@gmail.com">aphelionsystems@gmail.com</a></div>
+        <div><div class="colhead">Studio</div><a class="flink" href="services.html">Services</a><a class="flink" href="pricing.html">Pricing</a><a class="flink" href="about.html">About</a><a class="flink" href="faq.html">FAQ</a></div>
+        <div><div class="colhead">Connect</div><a class="flink" href="contact.html">Contact</a><a class="flink" href="https://github.com/jacklittle4">GitHub</a><a class="flink" href="privacy.html">Privacy</a><a class="flink" href="terms.html">Terms</a></div>
       </div>
-      <div class="footer-bottom page-grid">
-        <span>&copy; 2026 Aphelion Systems.</span>
-        <span>Built for GitHub Pages.</span>
-      </div>
-    </footer>
-
-    <script src="script.js?v=8"></script>
-  </body>
+      <div class="footer-bottom"><span>&copy; <span data-year>2026</span> Aphelion Systems.</span><span>Web &middot; Apps &middot; Databases &middot; Servers</span></div>
+    </div>
+  </footer>
+  <script src="script.js?v=9"></script>
+</body>
 </html>

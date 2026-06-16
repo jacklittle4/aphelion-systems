@@ -1,113 +1,133 @@
-const header = document.querySelector("[data-header]");
-const navToggle = document.querySelector(".nav-toggle");
-const navLinks = document.querySelectorAll(".site-nav a");
-const contactForm = document.querySelector(".contact-form");
-const formStatus = document.querySelector(".form-status");
-const themeToggle = document.querySelector("[data-theme-toggle]");
-const themeLabel = document.querySelector("[data-theme-label]");
-const demoTabs = document.querySelectorAll("[data-demo-target]");
-const demoPanels = document.querySelectorAll("[data-demo-panel]");
-const themeQuery = window.matchMedia("(prefers-color-scheme: dark)");
-const themeStorageKey = "aphelion-theme";
+/* ============================================================
+   Aphelion Systems — interactions
+   - constellation / particle background (canvas #space)
+   - scroll reveal (IntersectionObserver on [data-reveal])
+   - sticky header shadow, mobile nav, footer year
+   ============================================================ */
+(function () {
+  "use strict";
 
-const getStoredTheme = () => {
-  try {
-    return localStorage.getItem(themeStorageKey);
-  } catch {
-    return null;
-  }
-};
+  /* ---------- constellation background ---------- */
+  const canvas = document.getElementById("space");
+  if (canvas && canvas.getContext) {
+    const ctx = canvas.getContext("2d");
+    let w = 0, h = 0, dpr = 1, points = [], raf = null;
 
-const setStoredTheme = (theme) => {
-  try {
-    if (theme) {
-      localStorage.setItem(themeStorageKey, theme);
-    } else {
-      localStorage.removeItem(themeStorageKey);
+    function size() {
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = canvas.width = Math.floor(window.innerWidth * dpr);
+      h = canvas.height = Math.floor(window.innerHeight * dpr);
+      canvas.style.width = window.innerWidth + "px";
+      canvas.style.height = window.innerHeight + "px";
     }
-  } catch {
-    return;
+    function seed() {
+      const count = Math.max(36, Math.min(96, Math.floor(window.innerWidth / 16)));
+      points = [];
+      for (let i = 0; i < count; i++) {
+        points.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          vx: (Math.random() - 0.5) * 0.14 * dpr,
+          vy: (Math.random() - 0.5) * 0.14 * dpr,
+          r: (Math.random() * 1.3 + 0.4) * dpr,
+        });
+      }
+    }
+    function frame() {
+      ctx.clearRect(0, 0, w, h);
+      const maxd = 132 * dpr;
+      for (let i = 0; i < points.length; i++) {
+        const p = points[i];
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0 || p.x > w) p.vx *= -1;
+        if (p.y < 0 || p.y > h) p.vy *= -1;
+        for (let j = i + 1; j < points.length; j++) {
+          const q = points[j];
+          const dx = p.x - q.x, dy = p.y - q.y;
+          const d = Math.sqrt(dx * dx + dy * dy);
+          if (d < maxd) {
+            ctx.strokeStyle = "rgba(131,141,255," + (1 - d / maxd) * 0.45 + ")";
+            ctx.lineWidth = dpr;
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y); ctx.stroke();
+          }
+        }
+      }
+      for (const p of points) {
+        ctx.fillStyle = "rgba(216,222,255,0.9)";
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill();
+      }
+      raf = requestAnimationFrame(frame);
+    }
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    size(); seed();
+    if (reduce) { frame(); cancelAnimationFrame(raf); } else { frame(); }
+    let t;
+    window.addEventListener("resize", () => {
+      clearTimeout(t);
+      t = setTimeout(() => { size(); seed(); }, 180);
+    });
   }
-};
 
-const getSystemTheme = () => (themeQuery.matches ? "dark" : "light");
-const getEffectiveTheme = () => getStoredTheme() || getSystemTheme();
-
-const applyTheme = () => {
-  const storedTheme = getStoredTheme();
-
-  if (storedTheme) {
-    document.documentElement.dataset.theme = storedTheme;
+  /* ---------- scroll reveal ---------- */
+  const revealEls = document.querySelectorAll("[data-reveal]");
+  if ("IntersectionObserver" in window && revealEls.length) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -7% 0px" }
+    );
+    revealEls.forEach((el) => io.observe(el));
+    /* safety net: reveal anything still hidden after load */
+    window.addEventListener("load", () => {
+      setTimeout(() => revealEls.forEach((el) => el.classList.add("is-visible")), 1400);
+    });
   } else {
-    delete document.documentElement.dataset.theme;
+    revealEls.forEach((el) => el.classList.add("is-visible"));
   }
 
-  if (themeLabel) {
-    themeLabel.textContent = storedTheme
-      ? storedTheme.charAt(0).toUpperCase() + storedTheme.slice(1)
-      : "System";
+  /* ---------- sticky header shadow ---------- */
+  const header = document.querySelector("[data-header]");
+  if (header) {
+    const onScroll = () => header.classList.toggle("is-scrolled", window.scrollY > 14);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
   }
 
-  if (themeToggle) {
-    themeToggle.setAttribute(
-      "aria-label",
-      `Color mode: ${storedTheme || "system"}. Click to change.`
+  /* ---------- mobile nav ---------- */
+  const navToggle = document.querySelector("[data-nav-toggle]");
+  const nav = document.getElementById("site-nav");
+  if (navToggle && nav) {
+    navToggle.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
+      document.body.classList.toggle("nav-open", open);
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    nav.querySelectorAll("a").forEach((a) =>
+      a.addEventListener("click", () => {
+        nav.classList.remove("open");
+        document.body.classList.remove("nav-open");
+        navToggle.setAttribute("aria-expanded", "false");
+      })
     );
   }
-};
 
-const updateHeader = () => {
-  if (header) {
-    header.classList.toggle("is-scrolled", window.scrollY > 12);
+  /* ---------- contact form status ---------- */
+  const form = document.querySelector(".contact-form");
+  const status = document.querySelector(".form-status");
+  if (form && status) {
+    form.addEventListener("submit", () => {
+      status.textContent = "Sending your project note...";
+    });
   }
-};
 
-applyTheme();
-updateHeader();
-window.addEventListener("scroll", updateHeader, { passive: true });
-themeQuery.addEventListener("change", applyTheme);
-
-if (themeToggle) {
-  themeToggle.addEventListener("click", () => {
-    const storedTheme = getStoredTheme();
-    const nextTheme = storedTheme === "light" ? "dark" : storedTheme === "dark" ? null : "light";
-    setStoredTheme(nextTheme);
-    applyTheme();
-  });
-}
-
-if (navToggle) {
-  navToggle.addEventListener("click", () => {
-    const isOpen = document.body.classList.toggle("nav-open");
-    navToggle.setAttribute("aria-expanded", String(isOpen));
-  });
-}
-
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    document.body.classList.remove("nav-open");
-    if (navToggle) {
-      navToggle.setAttribute("aria-expanded", "false");
-    }
-  });
-});
-
-if (contactForm && formStatus) {
-  contactForm.addEventListener("submit", () => {
-    formStatus.textContent = "Sending your project note...";
-  });
-}
-
-demoTabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    const target = tab.dataset.demoTarget;
-
-    demoTabs.forEach((item) => {
-      item.classList.toggle("is-active", item === tab);
-    });
-
-    demoPanels.forEach((panel) => {
-      panel.classList.toggle("is-active", panel.dataset.demoPanel === target);
-    });
-  });
-});
+  /* ---------- footer year ---------- */
+  const year = document.querySelector("[data-year]");
+  if (year) year.textContent = String(new Date().getFullYear());
+})();
