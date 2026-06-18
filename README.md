@@ -77,7 +77,7 @@ The site is deployed with **GitHub Pages** from the **`main` branch root**:
 
 Before sharing the site with prospects:
 
-- [ ] Use **hello@aphelionsystems.dev** as the contact address until a domain and a matching email are owned.
+- [ ] Use **aphelionsystems.dev@gmail.com** as the contact address until a domain and a matching email are owned.
 - [ ] **Submit one test form** so FormSubmit confirms the Gmail destination address (the first submission triggers the activation email).
 - [ ] If the Pages URL ever changes, **update the page titles, meta descriptions, and `sitemap.xml`** to match.
 - [ ] **Do not add a `CNAME` file** until a real domain is actually purchased.
