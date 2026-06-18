@@ -48,11 +48,9 @@
             <div class="row"><span class="k">Response</span><span class="v">usually within a day</span></div>
           </div>
         </div>
-        <form class="contact-form" action="https://formsubmit.co/hello@aphelionsystems.dev" method="POST">
-          <input type="hidden" name="_subject" value="New Aphelion Systems project inquiry" />
-          <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value="https://aphelionsystems.dev/thank-you.html" />
+        <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+          <input type="hidden" name="form-name" value="contact" />
+          <p hidden aria-hidden="true"><label>Leave this field empty if you are human: <input name="bot-field" /></label></p>
           <label>Name<input type="text" name="name" autocomplete="name" required /></label>
           <label>Business or project name<input type="text" name="business_name" autocomplete="organization" /></label>
           <label>Email<input type="email" name="email" autocomplete="email" required /></label>
@@ -62,7 +60,7 @@
           <label>Current website<input type="url" name="current_website" placeholder="https://example.com" /></label>
           <label>What are you hoping to build?<textarea name="message" rows="6" required></textarea></label>
           <button class="btn btn-amber" type="submit">Send project note</button>
-          <p class="form-status" role="status" aria-live="polite">This uses FormSubmit. The first submission may ask the destination email to confirm setup.</p>
+          <p class="form-status" role="status" aria-live="polite">Your message goes straight to my inbox — I usually reply within a day.</p>
         </form>
       </div>
     </div>
