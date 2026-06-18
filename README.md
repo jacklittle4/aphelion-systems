@@ -2,7 +2,7 @@
 
 Affordable, full-stack web & software studio for small businesses — built and run by [Jack Little](https://github.com/jacklittle4).
 
-**Live site:** https://jacklittle4.github.io/aphelion-systems/
+**Live site:** https://aphelionsystems.dev/
 
 Aphelion Systems designs and builds websites, web apps, databases, and servers, plus quick touch-ups and maintenance — all priced for small businesses that need real, working software without enterprise overhead.
 
@@ -71,13 +71,13 @@ The site is deployed with **GitHub Pages** from the **`main` branch root**:
 1. Push to `main`.
 2. In the repo, go to **Settings → Pages**.
 3. Set **Source** to **Deploy from a branch**, branch **`main`**, folder **`/ (root)`**.
-4. GitHub publishes to https://jacklittle4.github.io/aphelion-systems/.
+4. GitHub publishes to https://aphelionsystems.dev/.
 
 ## Launch checklist
 
 Before sharing the site with prospects:
 
-- [ ] Use **aphelionsystems@gmail.com** as the contact address until a domain and a matching email are owned.
+- [ ] Use **hello@aphelionsystems.dev** as the contact address until a domain and a matching email are owned.
 - [ ] **Submit one test form** so FormSubmit confirms the Gmail destination address (the first submission triggers the activation email).
 - [ ] If the Pages URL ever changes, **update the page titles, meta descriptions, and `sitemap.xml`** to match.
 - [ ] **Do not add a `CNAME` file** until a real domain is actually purchased.
