@@ -246,3 +246,8 @@ a{color:inherit; text-decoration:none;}
   .section{padding:72px 0;}
 }
 @media (max-width:560px){ .timeline{grid-template-columns:1fr;} .shell{padding:0 22px;} }
+
+/* clickable hero service labels + anchor offset for jumped-to service cards */
+.hero-trust a{color:var(--on-dark); font-weight:600; font-size:14px; text-decoration:none; transition:color .2s ease;}
+.hero-trust a:hover{color:var(--amber-soft); text-decoration:underline;}
+.svc h3{scroll-margin-top:100px;}
