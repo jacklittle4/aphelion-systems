@@ -2,7 +2,7 @@
 
 Affordable, full-stack web & software studio for small businesses — built and run by [Jack Little](https://github.com/jacklittle4).
 
-**Live site:** https://aphelionsystems.dev/
+**Live site:** https://www.aphelionsystems.dev/
 
 Aphelion Systems designs and builds websites, web apps, databases, and servers, plus quick touch-ups and maintenance — all priced for small businesses that need real, working software without enterprise overhead.
 
@@ -71,7 +71,7 @@ The site is deployed with **GitHub Pages** from the **`main` branch root**:
 1. Push to `main`.
 2. In the repo, go to **Settings → Pages**.
 3. Set **Source** to **Deploy from a branch**, branch **`main`**, folder **`/ (root)`**.
-4. GitHub publishes to https://aphelionsystems.dev/.
+4. GitHub publishes to https://www.aphelionsystems.dev/.
 
 ## Launch checklist
 
