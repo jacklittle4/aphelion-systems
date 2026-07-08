@@ -67,6 +67,11 @@
       clearTimeout(t);
       t = setTimeout(() => { size(); seed(); }, 180);
     });
+    /* pause the animation when the tab is hidden to save CPU and battery */
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) { cancelAnimationFrame(raf); raf = null; }
+      else if (!reduce && raf === null) { frame(); }
+    });
   }
 
   /* ---------- scroll reveal ---------- */
