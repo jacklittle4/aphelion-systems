@@ -51,9 +51,12 @@
             <div class="row"><span class="k">Response</span><span class="v">within a day</span></div>
           </div>
         </div>
-        <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
-          <input type="hidden" name="form-name" value="contact" />
-          <p hidden aria-hidden="true"><label>Leave this field empty if you are human: <input name="bot-field" /></label></p>
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+          <input type="hidden" name="subject" value="New project inquiry from aphelionsystems.dev" />
+          <input type="hidden" name="from_name" value="Aphelion Systems website" />
+          <input type="hidden" name="redirect" value="https://www.aphelionsystems.dev/thank-you.html" />
+          <label aria-hidden="true" style="display:none"><input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" /></label>
           <label>Name<input type="text" name="name" autocomplete="name" required /></label>
           <label>Business or project name<input type="text" name="business_name" autocomplete="organization" /></label>
           <label>Email<input type="email" name="email" autocomplete="email" required /></label>
