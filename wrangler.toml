@@ -1,0 +1,7 @@
+name = "aphelion-systems"
+compatibility_date = "2025-01-01"
+
+# Static-assets-only Worker: serve the repo root as a static site.
+# No server code (no `main`), just the HTML/CSS/JS/images.
+[assets]
+directory = "./"

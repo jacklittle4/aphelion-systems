@@ -1,0 +1,7 @@
+.git
+.gitignore
+.assetsignore
+wrangler.toml
+node_modules
+README.md
+LICENSE
