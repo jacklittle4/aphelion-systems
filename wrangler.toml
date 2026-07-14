@@ -5,8 +5,6 @@ compatibility_date = "2025-01-01"
 # No server code (no `main`), just the HTML/CSS/JS/images.
 [assets]
 directory = "./"
-html_handling = "none"
-not_found_handling = "404-page"
 
 # Attach the domain to this Worker (creates the DNS record + SSL on deploy).
 [[routes]]
