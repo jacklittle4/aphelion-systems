@@ -5,3 +5,12 @@ compatibility_date = "2025-01-01"
 # No server code (no `main`), just the HTML/CSS/JS/images.
 [assets]
 directory = "./"
+
+# Attach the domain to this Worker (creates the DNS record + SSL on deploy).
+[[routes]]
+pattern = "www.aphelionsystems.dev"
+custom_domain = true
+
+[[routes]]
+pattern = "aphelionsystems.dev"
+custom_domain = true
