@@ -69,7 +69,7 @@
     });
     /* pause the animation when the tab is hidden to save CPU and battery */
     document.addEventListener("visibilitychange", () => {
-      if (document.hidden) { cancelAnimationFrame(raf); raf = null; }
+      if (document.hidden) { cancelAnimationFrame(raf); raf = null; ctx.clearRect(0, 0, w, h); }
       else if (!reduce && raf === null) { frame(); }
     });
   }
